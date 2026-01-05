@@ -9,17 +9,21 @@ app.get('/cats', (req, res) => {
     res.send('Meow!');
 })
 
+app.post('/cats', (req, res) => {
+    res.send('yesss');
+})
+
 app.get('/about', (req, res) => {
     res.send('About page');
 })
 
-app.get(/.*/, (req, res) => {
-    res.send('404');
-});
-
-// app.use((req, res) => {
+// app.get(/.*/, (req, res) => {
 //     res.send('404');
-// })
+// });
+
+app.use((req, res) => {
+    res.send('404');
+})
 
 app.listen(8080, () => {
     console.log('Server is running on http://localhost:8080');
