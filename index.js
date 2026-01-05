@@ -5,6 +5,16 @@ app.get('/', (req, res) => {
     res.send('Hello world');
 })
 
+app.get('/blog/:judul', (req, res) => {
+    const { judul } = req.params;
+    res.send(`kita sedang melihat berita ${ judul }`);
+})
+
+app.get('/blog/:category/:judul/:author', (req, res) => {
+    const { category, judul, author } = req.params;
+    res.send(`kita sedang melihat berita ${ category } ${ judul } ${ author }`);
+})
+
 app.get('/cats', (req, res) => {
     res.send('Meow!');
 })
