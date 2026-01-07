@@ -15,6 +15,14 @@ app.get('/blog/:category/:judul/:author', (req, res) => {
     res.send(`kita sedang melihat berita ${ category } ${ judul } ${ author }`);
 })
 
+app.get('/search', (req, res) => {
+    const { q } = req.query;
+    if (!q) {
+        res.send(`<h1>data hilanggt</h1>`)
+    }
+    res.send(`<h1> search keyword: ${ q } </h1>`);
+})
+
 app.get('/cats', (req, res) => {
     res.send('Meow!');
 })
